@@ -32,13 +32,13 @@ body {
   height: 3px !important;
 }
 *::-webkit-scrollbar-track {
-  background-color: #100a0f;
+  background-color: #ffffff;
 }
 *::-webkit-scrollbar-track:hover {
-  background-color: #100a0f;
+  background-color: #ffffff;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #515152;
+  background-color: #ffffff;
   border-radius: 16px;
 }
 *::-webkit-scrollbar-thumb:hover {

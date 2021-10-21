@@ -1,12 +1,12 @@
 import React from "react";
-import Male from "../../Images/man.png";
-import Female from "../../Images/woman.png";
-import HeaderArt from "../../Images/header-art.svg";
-import ProblemKit from "../../Images/problem-img.svg";
-import LoopHeader from "../../Images/Loop start.svg";
-import Img1 from "../../Images/img-1 (1).svg";
-import Img2 from "../../Images/img-1 (2).svg";
-import Img3 from "../../Images/img-1 (3).svg";
+import Male from "../../../Images/man.png";
+import Female from "../../../Images/woman.png";
+import HeaderArt from "../../../Images/header-art.svg";
+import ProblemKit from "../../../Images/problem-img.svg";
+import LoopHeader from "../../../Images/Loop start.svg";
+import Img1 from "../../../Images/img-1 (1).svg";
+import Img2 from "../../../Images/img-1 (2).svg";
+import Img3 from "../../../Images/img-1 (3).svg";
 import "./Dashboard.css";
 import { NavLink } from "react-router-dom";
 

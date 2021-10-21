@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Login from "./components/Login/Login";
-import Main from "./components/Main/Main";
+import Main from "./components/Student/Main/Main.jsx";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";

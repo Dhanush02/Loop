@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import codekata from "../../Images/codekata.svg";
+import codekata from "../../../Images/codekata.svg";
 import "./Codekata.css";
 import { useHistory } from "react-router-dom";
 const Codekata = () => {

@@ -1,0 +1,74 @@
+.question-outoff span {
+  font-size: 16px;
+}
+hr {
+  background-color: rgb(226, 226, 226) !important;
+  width: 70% !important;
+  float: left;
+}
+.hr {
+  float: left;
+  width: 100%;
+}
+.question-outoff .question-order {
+  color: #39b98f;
+}
+.numberCircle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #39b98f;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  line-height: 28px;
+}
+.que-path {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #81ffd5;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+  border: none;
+}
+.que-path:focus{
+    background: #39b98f;
+    color: #fff;
+    outline: none;
+}
+.quizzes {
+  border: 1px solid #ccc;
+  border-radius: 18px;
+}
+.span-question {
+  font-size: 18px;
+  font-weight: 500;
+}
+.option-1:focus,
+.option-2:focus {
+  background-color: #39b98f;
+  color: #fff;
+  outline: none;
+}
+.option-1,
+.option-2 {
+  width: 250px;
+  height: fit-content;
+  border: none;
+  border-radius: 10px;
+  background: rgba(90, 209, 144, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+}
+.timer-text {
+  font-weight: 600 !important;
+}
+.timer-hand {
+  font-size: 11px;
+  color: #39b98f;
+}
