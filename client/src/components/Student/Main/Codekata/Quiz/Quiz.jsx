@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Male from "../../../../Images/man.png";
 import { useParams, useHistory } from "react-router-dom";
 import "./Quiz.css";
@@ -6,7 +6,7 @@ import QuizImage from "../../../../Images/Quiz.png";
 import ProblemImage from "../../../../Images/problem.png";
 // import QuizUndraw from "../../../Images/Quiz undraw.svg";
 
-const Quiz = () => {
+const Quiz = (props) => {
   const location = useParams();
   const history = useHistory();
   console.log(location);
@@ -16,16 +16,30 @@ const Quiz = () => {
     history.push(`/codekata/${location.id}/mcq`);
   };
 
+  useEffect(() => {
+    props.setSideToggle(true);
+  });
+
+  const returnBack = () => {
+    history.goBack();
+  };
+
   return (
     <div className="container-fluid dashboard">
-      <div className="user-info position-relative mb-5">
-        <div className="d-flex mx-4 pt-3 user-det justify-content-end">
-          <div className="gender-info mr-3">
-            <img src={Male} alt="male" height="50" width="50" />
-          </div>
-          <div className="user-profile d-flex flex-column">
-            <span className="user-name">Dhanush Karthick S</span>
-            <span className="register-no">1813015</span>
+      <div className="d-flex">
+        <div class="back-btn mr-auto mt-3 ml-4" onClick={returnBack}>
+          <div class="triangle"></div>
+          <div class="halfcircle"></div>
+        </div>
+        <div className="user-info position-relative">
+          <div className="d-flex mx-4 pt-3 user-det justify-content-end">
+            <div className="gender-info mr-3">
+              <img src={Male} alt="male" height="50" width="50" />
+            </div>
+            <div className="user-profile d-flex flex-column">
+              <span className="user-name">Dhanush Karthick S</span>
+              <span className="register-no">1813015</span>
+            </div>
           </div>
         </div>
       </div>
@@ -34,7 +48,10 @@ const Quiz = () => {
       </p>
       <p className="text-left ml-5 dash-title-category">QUIZZES</p>
       <div className="d-flex flex-wrap align-items-center justify-content-center">
-        <div className="dcard mr-5 mb-5 d-flex align-items-center justify-content-center" onClick={routeQuestion} >
+        <div
+          className="dcard mr-5 mb-5 d-flex align-items-center justify-content-center"
+          onClick={routeQuestion}
+        >
           <div className="trigger"></div>
           <div className="trigger"></div>
           <div className="trigger"></div>
@@ -44,11 +61,10 @@ const Quiz = () => {
           <div className="trigger"></div>
           <div className="trigger"></div>
           <div className="trigger"></div>
-          <div className="card" >
+          <div className="card">
             <img
               src={QuizImage}
               className="img-fluid"
-              
               alt="Quiz-image"
               height="150px"
               width="150px"

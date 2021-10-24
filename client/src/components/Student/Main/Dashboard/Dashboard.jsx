@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Male from "../../../Images/man.png";
 import Female from "../../../Images/woman.png";
 import HeaderArt from "../../../Images/header-art.svg";
@@ -10,7 +10,10 @@ import Img3 from "../../../Images/img-1 (3).svg";
 import "./Dashboard.css";
 import { NavLink } from "react-router-dom";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  useEffect(() => {
+    props.setSideToggle(false);
+  });
   return (
     <div className="container-fluid dashboard">
       <div className="user-info position-relative">
@@ -24,7 +27,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="header-dashboard mt-5">
         <div className="d-flex">
           <div className="col-md-7">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Route, Redirect, Switch } from "react-router-dom";
 import "./Main.css";
 import LoopLogo from "../../Images/Loop1.jpg";
@@ -11,10 +11,17 @@ import Compiler from "./Compiler/Compiler";
 import Quiz from "./Codekata/Quiz/Quiz";
 import Mcq from "./Codekata/Quiz/McqLength/McqLength";
 const Main = (props) => {
+  const [sideToggle, setSideToggle] = useState(false);
   return (
     <div className="conatiner-fluid w-100">
       <div className="d-flex">
-        <div className="side-nav d-flex flex-column align-items-center justify-content-between side-bar p-2">
+        <div
+          className={`${
+            sideToggle
+              ? `hide-bar`
+              : `side-bar d-flex flex-column align-items-center justify-content-between side-nav p-2`
+          }`}
+        >
           <div className="logo-sec">
             <img
               src={LoopLogo}
@@ -111,15 +118,29 @@ const Main = (props) => {
         </div>
         <div className="main-div w-100">
           <Switch>
-            <Route path="/dashboard" component={Dashboard} exact />
-            <Route path="/codekata">
-              <Route path="/codekata/:id/mcq" component={Mcq} exact />
-              <Route path="/codekata/:id" component={Quiz} exact />
-              <Route path="/codekata" component={Codekata} exact />
+            <Route path="/dashboard" exact>
+              <Dashboard setSideToggle={setSideToggle} />
             </Route>
-            <Route path="/articles" component={Articles} />
-            <Route path="/roadmap" component={Roadmap} />
-            <Route path="/compiler" component={Compiler} />
+            <Route path="/codekata">
+              <Route path="/codekata/:id/mcq" exact>
+                <Mcq setSideToggle={setSideToggle} />
+              </Route>
+              <Route path="/codekata/:id" exact>
+                <Quiz setSideToggle={setSideToggle} />
+              </Route>
+              <Route path="/codekata" exact>
+                <Codekata snackBar={props.snackBar} setSideToggle={setSideToggle} />
+              </Route>
+            </Route>
+            <Route path="/articles">
+              <Articles setSideToggle={setSideToggle} />
+            </Route>
+            <Route path="/roadmap">
+              <Roadmap setSideToggle={setSideToggle} />
+            </Route>
+            <Route path="/compiler">
+              <Compiler setSideToggle={setSideToggle} />
+            </Route>
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </Switch>
         </div>

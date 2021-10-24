@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import codekata from "../../../Images/codekata.svg";
 import "./Codekata.css";
 import { useHistory } from "react-router-dom";
-const Codekata = () => {
+const Codekata = (props) => {
   const history = useHistory();
   const [code, setCode] = useState("");
   const submitCode = (e) => {
     e.preventDefault();
-    history.push(`/codekata/${code}`);
-    console.log(code);
+    {
+      code.length < 6
+        ? props.snackBar("Your code is wrong!! Ckeck your code","error")
+        : history.push(`/codekata/${code}`);
+    }
   };
+  useEffect(() => {
+    props.setSideToggle(false);
+  });
   return (
     <div className="container h-100" style={{ marginTop: "150px" }}>
       <div className="d-flex align-items-center justify-content-center">
