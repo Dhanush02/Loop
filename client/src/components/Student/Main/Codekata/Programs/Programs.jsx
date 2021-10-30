@@ -1,18 +1,9 @@
 import React, { useEffect } from "react";
 import "./Programs.css";
 import { useHistory } from "react-router";
-
-// import Avatar from "@material-ui/core/Avatar";
-// import AvatarGroup from "@material-ui/core/AvatarGroup";
-// import { deepOrange, deepPurple } from "@material-ui/core/colors";
 import Backdrop from "@material-ui/core/Backdrop";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import SelectReducer from "../../../../Reducer/SelectReducer/SelectReducer";
 import Editor from "../../../../Reducer/Editor/Editor";
@@ -213,7 +204,7 @@ const Programs = (props) => {
               </div>
             </div>
             <div className="col-md-8 p-0 d-flex flex-column">
-              <Editor language={language} theme={themeName} />
+              <Editor language={language} themeName={themeName} />
               <Backdrop
                 className={classes.backdrop}
                 open={open}
@@ -244,12 +235,13 @@ const Programs = (props) => {
                           ]}
                           name="Select theme"
                           handleSelect={handleChange}
-                          setThemeName={setThemeName}
+                          value={themeName}
                         />
                         <SelectReducer
                           array={["c", "java"]}
                           name="Select language"
                           handleSelect={handleLanguage}
+                          value={language}
                         />
                       </div>
                     </div>
@@ -257,90 +249,6 @@ const Programs = (props) => {
                 </div>
               </Backdrop>
             </div>
-            {/* <div className="col-md-8 p-0 d-flex flex-column">
-              <div className="d-flex border-bottom">
-                <div className="select-language mr-auto">
-                  <FormControl
-                    sx={{ m: 1, width: 230 }}
-                    size="small"
-                    className="mt-3 mb-0"
-                  >
-                    <InputLabel id="demo-simple-select-label">
-                      Select Language
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={language}
-                      onChange={handleLanguage}
-                      input={<OutlinedInput label="Select Language" />}
-                      MenuProps={MenuProps}
-                    >
-                      {languages.map((name) => (
-                        <MenuItem key={name} value={name}>
-                          <ListItemText primary={name} />
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </div>
-                <div className="select-theme">
-                  <FormControl
-                    sx={{ m: 1, width: 230 }}
-                    size="small"
-                    className="mt-3 mb-0"
-                  >
-                    <InputLabel id="demo-simple-select-label">
-                      Select theme
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={themeName}
-                      onChange={handleChange}
-                      input={<OutlinedInput label="Select theme" />}
-                      //   renderValue={(selected) => selected.join(", ")}
-                      MenuProps={MenuProps}
-                    >
-                      {themes.map((name) => (
-                        <MenuItem key={name} value={name}>
-                          <ListItemText primary={name} />
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </div>
-              </div>
-              <AceEditor
-                className="mt-2"
-                height="100%"
-                width="100%"
-                placeholder="Your code goes here.."
-                mode={language}
-                theme={themeName}
-                name="Editor"
-                onChange={(value) => console.log(value)}
-                fontSize={20}
-                showPrintMargin={false}
-                showGutter={true}
-                highlightActiveLine={true}
-                value={`public class MyClass {
-    public static void main(String args[]) {
-        int x=10;
-        int y=25;
-        int z=x+y;
-        System.out.println("Sum of x+y = " + z);
-    }
-}`}
-                setOptions={{
-                  enableBasicAutocompletion: true,
-                  enableLiveAutocompletion: true,
-                  enableSnippets: true,
-                  showLineNumbers: true,
-                  tabSize: 2,
-                }}
-              />
-            </div> */}
           </div>
         </div>
       </div>

@@ -29,9 +29,9 @@ const Quiz = (props) => {
   return (
     <div className="container-fluid dashboard">
       <div className="d-flex">
-        <div class="back-btn mr-auto mt-3 ml-4" onClick={returnBack}>
-          <div class="triangle"></div>
-          <div class="halfcircle"></div>
+        <div className="back-btn mr-auto mt-3 ml-4" onClick={returnBack}>
+          <div className="triangle"></div>
+          <div className="halfcircle"></div>
         </div>
         <div className="user-info position-relative">
           <div className="d-flex mx-4 pt-3 user-det justify-content-end">

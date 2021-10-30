@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./McqLength.css";
 import { useParams, useHistory } from "react-router-dom";
@@ -89,7 +88,7 @@ const Mcq = (props) => {
     setStatus(true);
   };
   return (
-    <div className="container-fluid p-0 Quiz-question-container" >
+    <div className="container-fluid p-0 Quiz-question-container">
       <div className="d-flex">
         <div class="back-btn mr-auto mt-3 ml-4" onClick={returnBack}>
           <div class="triangle"></div>
@@ -140,9 +139,10 @@ const Mcq = (props) => {
             <div className="d-flex flex-column align-items-center justify-content-center mt-3">
               <div className="d-flex p-2 w-100 flex-wrap">
                 {Object.values(questions[currentQuestion].answerOptions).map(
-                  (answerOptions) => {
+                  (answerOptions, id) => {
                     return (
                       <button
+                        key={id}
                         className={`${
                           status && selectedAnswer === answerOptions
                             ? `correct-option text-left pr-2 pl-3 pt-2 pb-2 m-2`
@@ -166,7 +166,7 @@ const Mcq = (props) => {
                   Previous
                 </button>
                 <button
-                className="mr-2 btn-hover pr-1 pl-1 color-11"
+                  className="mr-2 btn-hover pr-1 pl-1 color-11"
                   color="primary"
                   variant="contained"
                   onClick={handleNext}

@@ -8,16 +8,12 @@ import Img1 from "../../../Images/img-1 (1).svg";
 import Img2 from "../../../Images/img-1 (2).svg";
 import Img3 from "../../../Images/img-1 (3).svg";
 import "./Dashboard.css";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Dashboard = (props) => {
-  const history = useHistory();
   useEffect(() => {
     props.setSideToggle(false);
   });
-  // const routeProfile = () => {
-  //   history.push("/profile");
-  // };
   return (
     <div className="container-fluid dashboard">
       <NavLink to="/profile" exact>
@@ -46,12 +42,16 @@ const Dashboard = (props) => {
                 <span className="header-article mb-3">Web Developer</span>
                 <NavLink to="/articles">
                   <span className="span-arrow">
-                    <i class="fas fa-arrow-circle-right"></i> Learn more..
+                    <i className="fas fa-arrow-circle-right"></i> Learn more..
                   </span>
                 </NavLink>
               </div>
               <div className="col-md-5 p-0">
-                <img className="img-fluid" src={HeaderArt} />
+                <img
+                  className="img-fluid"
+                  alt="Header Banner"
+                  src={HeaderArt}
+                />
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ const Dashboard = (props) => {
                 <span className="problem-span mb-2">For students</span>
                 <NavLink to="/codekata">
                   <span className="arrow-span">
-                    <i class="fas fa-arrow-circle-right"></i> Learn more..
+                    <i className="fas fa-arrow-circle-right"></i> Learn more..
                   </span>
                 </NavLink>
               </div>

@@ -12,7 +12,7 @@ const Roadmap = (props) => {
             <div class="main-timeline">
               <div class="timeline">
                 <div class="timeline-icon">
-                  <img src="https://img.icons8.com/color/96/000000/html-5--v1.png" />
+                  <img src="https://img.icons8.com/color/96/000000/html-5--v1.png" alt="HTML" />
                 </div>
                 <div class="timeline-content">
                   <h3 class="title">HYPERTEXT MARKUP LANGUAGE </h3>
@@ -25,7 +25,7 @@ const Roadmap = (props) => {
               </div>
               <div class="timeline">
                 <div class="timeline-icon">
-                  <img src="https://img.icons8.com/color/96/000000/css3.png" />
+                  <img src="https://img.icons8.com/color/96/000000/css3.png" alt="CSS" />
                 </div>
                 <div class="timeline-content">
                   <h3 class="title">CASADING STYLE SHEET</h3>
@@ -38,7 +38,7 @@ const Roadmap = (props) => {
               </div>
               <div class="timeline">
                 <div class="timeline-icon">
-                  <img src="https://img.icons8.com/color/96/000000/javascript--v1.png" />
+                  <img src="https://img.icons8.com/color/96/000000/javascript--v1.png" alt="JS"/>
                 </div>
                 <div class="timeline-content">
                   <h3 class="title">JAVASCRIPT</h3>
@@ -51,7 +51,7 @@ const Roadmap = (props) => {
               </div>
               <div class="timeline">
                 <div class="timeline-icon">
-                  <img src="https://img.icons8.com/ios-filled/96/000000/jquery.png" />
+                  <img src="https://img.icons8.com/ios-filled/96/000000/jquery.png" alt="JQUERY"/>
                 </div>
                 <div class="timeline-content">
                   <h3 class="title">JQUERY</h3>

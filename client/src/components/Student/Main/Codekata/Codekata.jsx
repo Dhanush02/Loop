@@ -7,11 +7,9 @@ const Codekata = (props) => {
   const [code, setCode] = useState("");
   const submitCode = (e) => {
     e.preventDefault();
-    {
-      code.length < 6
-        ? props.snackBar("Your code is wrong!! Ckeck your code","error")
-        : history.push(`/codekata/${code}`);
-    }
+    if (code.length < 6)
+      props.snackBar("Your code is wrong!! Ckeck your code", "error");
+    else history.push(`/codekata/${code}`);
   };
   useEffect(() => {
     props.setSideToggle(false);
