@@ -89,7 +89,7 @@ const Mcq = (props) => {
     setStatus(true);
   };
   return (
-    <div className="container-fluid p-0" >
+    <div className="container-fluid p-0 Quiz-question-container" >
       <div className="d-flex">
         <div class="back-btn mr-auto mt-3 ml-4" onClick={returnBack}>
           <div class="triangle"></div>

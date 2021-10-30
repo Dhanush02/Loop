@@ -8,33 +8,38 @@ import Img1 from "../../../Images/img-1 (1).svg";
 import Img2 from "../../../Images/img-1 (2).svg";
 import Img3 from "../../../Images/img-1 (3).svg";
 import "./Dashboard.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 const Dashboard = (props) => {
+  const history = useHistory();
   useEffect(() => {
     props.setSideToggle(false);
   });
+  // const routeProfile = () => {
+  //   history.push("/profile");
+  // };
   return (
     <div className="container-fluid dashboard">
-      <div className="user-info position-relative">
-        <div className="d-flex mx-4 pt-3 user-det justify-content-end">
-          <div className="gender-info mr-3">
-            <img src={Male} alt="male" height="50" width="50" />
-          </div>
-          <div className="user-profile d-flex flex-column">
-            <span className="user-name">Dhanush Karthick S</span>
-            <span className="register-no">1813015</span>
+      <NavLink to="/profile" exact>
+        <div className="user-info position-relative">
+          <div className="d-flex mx-4 pt-3 user-det justify-content-end">
+            <div className="gender-info mr-3">
+              <img src={Male} alt="male" height="50" width="50" />
+            </div>
+            <div className="user-profile d-flex flex-column">
+              <span className="user-name">Dhanush Karthick S</span>
+              <span className="register-no">1813015</span>
+            </div>
           </div>
         </div>
-      </div>
-
+      </NavLink>
       <div className="header-dashboard mt-5">
         <div className="d-flex">
           <div className="col-md-7">
             <p className="header-title mt-1">
               <span className="dash-greet">Welcome</span> DHANUSH KARTHICK S ..!
             </p>
-            <div className="d-flex border-header mt-3">
+            <div className="d-flex border-header mt-3 align-items-center justify-">
               <div className="col-md-7 d-flex flex-column pl-4">
                 <span className="header-article">Become a</span>
                 <span className="header-article">Full Stack</span>
@@ -51,7 +56,7 @@ const Dashboard = (props) => {
             </div>
           </div>
           <div
-            className="col-md-4 mt-md-5 p-3 border-header-1 mt-lg-2"
+            className="col-md-4 p-3 d-flex border-header-1"
             style={{
               backgroundImage: `url(${ProblemKit})`,
               height: "280px",
@@ -61,15 +66,17 @@ const Dashboard = (props) => {
               backgroundPosition: "78% 15%",
             }}
           >
-            <div className="problem-solve-header d-flex flex-column align-items-start mt-5">
-              <span className="problem-article">Problem </span>
-              <span className="problem-article">Solving </span>
-              <span className="problem-span mb-2">For students</span>
-              <NavLink to="/codekata">
-                <span className="arrow-span">
-                  <i class="fas fa-arrow-circle-right"></i> Learn more..
-                </span>
-              </NavLink>
+            <div className="problem-solve-header d-flex flex-column align-items-center mt-5">
+              <div className="d-flex flex-column align-self-start">
+                <span className="problem-article">Problem </span>
+                <span className="problem-article">Solving </span>
+                <span className="problem-span mb-2">For students</span>
+                <NavLink to="/codekata">
+                  <span className="arrow-span">
+                    <i class="fas fa-arrow-circle-right"></i> Learn more..
+                  </span>
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>

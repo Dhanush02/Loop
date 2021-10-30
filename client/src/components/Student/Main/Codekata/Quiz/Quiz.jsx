@@ -12,8 +12,10 @@ const Quiz = (props) => {
   console.log(location);
 
   const routeQuestion = () => {
-    console.log("clicked");
     history.push(`/codekata/${location.id}/mcq`);
+  };
+  const routeProgram = () => {
+    history.push(`/codekata/${location.id}/program`);
   };
 
   useEffect(() => {
@@ -92,7 +94,10 @@ const Quiz = (props) => {
       </div>
       <p className="text-left ml-5 problem-article">PROBLEMS</p>
       <div className="d-flex flex-wrap align-items-center justify-content-center">
-        <div className="dcard mr-5 mb-5 d-flex align-items-center justify-content-center">
+        <div
+          className="dcard mr-5 mb-5 d-flex align-items-center justify-content-center"
+          onClick={routeProgram}
+        >
           <div className="trigger"></div>
           <div className="trigger"></div>
           <div className="trigger"></div>

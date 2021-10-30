@@ -1,6 +1,9 @@
 .question-outoff span {
   font-size: 16px;
 }
+.Quiz-question-container{
+  height: 100vh;
+}
 hr {
   background-color: rgb(226, 226, 226) !important;
   width: 70% !important;

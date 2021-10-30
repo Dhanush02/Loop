@@ -10,6 +10,8 @@ import Roadmap from "./Roadmap/Roadmap";
 import Compiler from "./Compiler/Compiler";
 import Quiz from "./Codekata/Quiz/Quiz";
 import Mcq from "./Codekata/Quiz/McqLength/McqLength";
+import Profile from "./Profile/Profile";
+import Programs from "./Codekata/Programs/Programs";
 const Main = (props) => {
   const [sideToggle, setSideToggle] = useState(false);
   return (
@@ -125,11 +127,17 @@ const Main = (props) => {
               <Route path="/codekata/:id/mcq" exact>
                 <Mcq setSideToggle={setSideToggle} />
               </Route>
+              <Route path="/codekata/:id/program" exact>
+                <Programs setSideToggle={setSideToggle} />
+              </Route>
               <Route path="/codekata/:id" exact>
                 <Quiz setSideToggle={setSideToggle} />
               </Route>
               <Route path="/codekata" exact>
-                <Codekata snackBar={props.snackBar} setSideToggle={setSideToggle} />
+                <Codekata
+                  snackBar={props.snackBar}
+                  setSideToggle={setSideToggle}
+                />
               </Route>
             </Route>
             <Route path="/articles">
@@ -140,6 +148,9 @@ const Main = (props) => {
             </Route>
             <Route path="/compiler">
               <Compiler setSideToggle={setSideToggle} />
+            </Route>
+            <Route path="/profile">
+              <Profile setSideToggle={setSideToggle} />
             </Route>
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </Switch>

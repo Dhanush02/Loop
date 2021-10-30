@@ -1,5 +1,14 @@
 .side-bar {
   height: 100vh !important;
+  min-width: 260px;
+  /* width: fit-content !important; */
+  /* width: 254px; */
+}
+@media (max-width: 992px) {
+  .side-bar {
+    height: 100vh !important;
+    min-width: 110px !important;
+  }
 }
 .hide-bar {
   display: none !important;

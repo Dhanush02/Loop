@@ -32,7 +32,7 @@ const Compiler = (props) => {
     "one_dark",
   ];
   const languages = ["c", "java"];
-  const [themeName, setThemeName] = React.useState("github");
+  const [themeName, setThemeName] = React.useState("nord_dark");
   const [language, setLanguage] = React.useState("java");
   const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -65,7 +65,7 @@ const Compiler = (props) => {
   return (
     <div className="container-fluid p-0 compiler-container">
       <div className="d-flex">
-        <div className="d-flex mr-auto">
+        <div className="d-flex mr-auto mt-2">
           <div class="back-btn mt-3 ml-4" onClick={returnBack}>
             <div class="triangle"></div>
             <div class="halfcircle"></div>
@@ -96,7 +96,7 @@ const Compiler = (props) => {
         <div className="col-md-9 p-0">
           <AceEditor
             className="mt-3"
-            height="80vh"
+            height="100vh"
             width="100%"
             placeholder="Your code goes here.."
             mode={language}
@@ -199,6 +199,7 @@ const Compiler = (props) => {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );
