@@ -1,28 +1,19 @@
 import React from "react";
 import "./InputReducer.css";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+
 const InputReducer = (props) => {
   return (
-    // <div className="fields">
-    //     <input
-    //       className="profile-input form-control"
-    //       placeholder={props.placeholder}
-    //       name={props.name}
-    //       type={props.type}
-    //       // value={props.value}
-    //     />
-    //   </div>
-    <div class="gfg-div">
-      <div class="gfg-input-fields">
-        <div class="gfg-email">
-          <input
-            className="w-100"
-            placeholder={props.placeholder}
-            name={props.name}
-            type={props.type}
-          />
-        </div>
-      </div>
-    </div>
+    <TextField
+      id="outlined-basic"
+      label={props.name}
+      variant="outlined"
+      className="w-100"
+      placeholder={props.placeholder}
+      name={props.name}
+      type={props.type}
+    />
   );
 };
 

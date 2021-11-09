@@ -28,7 +28,7 @@ const Profile = (props) => {
           <div className="col-md-6">
             <InputReducer
               placeholder="Register Number"
-              name="Registerno"
+              name="Register no"
               type="text"
             />
           </div>
@@ -37,14 +37,14 @@ const Profile = (props) => {
           <div className="col-md-6">
             <InputReducer
               placeholder="Old passoword"
-              name="Password"
+              name="Old Password"
               type="password"
             />
           </div>
           <div className="col-md-6">
             <InputReducer
               placeholder="New passoword"
-              name="Password"
+              name="New Password"
               type="password"
             />
           </div>

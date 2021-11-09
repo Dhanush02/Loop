@@ -174,13 +174,13 @@ const Compiler = (props) => {
               id="outlined-multiline-static"
               label="Enter your input"
               multiline
-              rows={3}
+              rows={6}
               variant="outlined"
             />
             <div className="d-flex align-items-end justify-content-end border-bottom">
               <Button
                 variant="outlined"
-                className="w-25 mt-3 mb-3"
+                className="w-25 mt-3 mb-3 pr-2 pl-2"
                 color="primary"
               >
                 COMPILE
@@ -192,7 +192,7 @@ const Compiler = (props) => {
                 className="mt-2"
                 id="outlined-multiline-static"
                 multiline
-                rows={3}
+                rows={10}
                 variant="outlined"
               />
             </div>

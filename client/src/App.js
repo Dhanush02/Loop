@@ -1,11 +1,12 @@
 import "./App.css";
 import { useState } from "react";
 import Login from "./components/Login/Login";
-import Main from "./components/Student/Main/Main.jsx";
+import Main from "./components/Admin/Main/Main";
+// import Main from "./components/Student/Main/Main";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-
+import DataProvider from "./Context";
 const Alert = (props) => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 };
@@ -24,7 +25,7 @@ const App = () => {
   const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState("");
   return (
-    <>
+    <DataProvider snackBar={snackBar}>
       <div className="App m-0 p-0">
         <Snackbar
           open={open}
@@ -56,7 +57,7 @@ const App = () => {
       <div className="breakpoint d-flex" style={{ height: "100vh" }}>
         This page Enables on Tablet
       </div>
-    </>
+    </DataProvider>
   );
 };
 

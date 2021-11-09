@@ -14,7 +14,7 @@ const Articles = (props) => {
   const [page, setPage] = useState(1);
   const loadPosts = async () => {
     const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts?_page=${page}`,
+      `https://jsonplaceholder.typicode.com/comments?_page=${page}`,
       {
         method: "GET",
       }
@@ -36,7 +36,7 @@ const Articles = (props) => {
               <Card key={post.id} style={{ height: 150 }}>
                 <CardContent>
                   <Typography variant="h6">
-                    {post.id}. {post.title}
+                    {post.id}. {post.name}
                   </Typography>
                 </CardContent>
               </Card>
@@ -45,9 +45,9 @@ const Articles = (props) => {
         </Grid>
         <Box py={3} display="flex" justifyContent="center">
           <Pagination
-            count={10}
+            count={13}
             color="primary"
-            variant="contained"
+            variant="text"
             onChange={(e, value) => setPage(value)}
           />
         </Box>
