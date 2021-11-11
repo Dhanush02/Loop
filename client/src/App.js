@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import Login from "./components/Login/Login";
-import Main from "./components/Admin/Main/Main";
-// import Main from "./components/Student/Main/Main";
+import AdminMain from "./components/Admin/Main/Main";
+import Main from "./components/Student/Main/Main";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
@@ -47,8 +47,15 @@ const App = () => {
           </Route>
           <Route path="/">
             {login ? (
-              <Main setLogin={setLogin} snackBar={snackBar} />
+              [
+                localStorage.getItem("role") === "student" ? (
+                  <Main setLogin={setLogin} snackBar={snackBar} />
+                ) : (
+                  <AdminMain setLogin={setLogin} snackBar={snackBar} />
+                ),
+              ]
             ) : (
+              // <AdminMain setLogin={setLogin} snackBar={snackBar} />
               <Redirect exact to="/login" />
             )}
           </Route>

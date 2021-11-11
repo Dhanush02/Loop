@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Login.css";
-import Developer from '../Images/developer.svg';
-import Hello from '../Images/Hello.svg';
+import Developer from "../Images/developer.svg";
+import Hello from "../Images/Hello.svg";
 const Login = (props) => {
   const [change, setChange] = useState(false);
   const [register, setRegister] = useState("");
   const [password, setPassword] = useState("");
+  const [admin, setAdmin] = useState("");
   const changeSignup = () => {
     setChange(true);
   };
@@ -16,21 +17,29 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("reg", register);
+    localStorage.setItem("role", "student");
     props.setLogin(true);
     props.snackBar("Logged in Succesfully..!!", "success");
   };
 
+  const handleAdmin = (e) => {
+    e.preventDefault();
+    localStorage.setItem("admin", admin);
+    props.setLogin(true);
+    props.snackBar("Logged Admin Succesfully..!!", "success");
+  };
+
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
-      handleSubmit();
-    }
+      if (change) {
+        handleAdmin();
+      }
+    } else handleSubmit();
   };
 
   return (
     <div>
-      <div
-        className={change ? "clip-content sign-up-mode" : "clip-content"}
-      >
+      <div className={change ? "clip-content sign-up-mode" : "clip-content"}>
         <div className="forms-cont">
           <div className="signin-signup">
             <form className="sign-in-form" onSubmit={handleSubmit}>
@@ -41,7 +50,6 @@ const Login = (props) => {
                 <input
                   type="text"
                   placeholder="Register number"
-                  onKeyPress={handleKeypress}
                   onChange={(e) => setRegister(e.target.value)}
                 />
               </div>
@@ -50,25 +58,37 @@ const Login = (props) => {
                 <input
                   type="password"
                   placeholder="Password"
-                  onKeyPress={handleKeypress}
+                  // onKeyPress={handleKeypress}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <button className="btn-hover color-11">
+              <button
+                className="btn-hover color-11"
+                onKeyPress={handleKeypress}
+                onClick={handleSubmit}
+              >
                 SIGN IN <i className="fas fa-sign-in-alt mr-2 ml-2"></i>
               </button>
             </form>
-            <form action="#" className="sign-up-form">
+            <form action="#" className="sign-up-form" onSubmit={handleAdmin}>
               <h2 className="title">Admin Sign in</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
-                <input type="email" placeholder="Email" />
+                <input
+                  type="text"
+                  placeholder="Register no"
+                  onChange={(e) => setAdmin(e.target.value)}
+                />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
                 <input type="password" placeholder="Password" />
               </div>
-              <button className="btn-hover color-11 mt-2">
+              <button
+                className="btn-hover color-11 mt-2"
+                onKeyPress={handleKeypress}
+                onClick={handleAdmin}
+              >
                 SIGN UP <i className="fas fa-sign-out-alt mr-2 ml-2"></i>
               </button>
             </form>
