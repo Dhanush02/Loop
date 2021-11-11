@@ -57,6 +57,34 @@ const tableData = [
     college: "KSRIET",
     batch: "2018-2012",
   },
+  {
+    register_number: 1813018,
+    course: "CSE",
+    stream: "B.E",
+    college: "KSRCT",
+    batch: "2018-2012",
+  },
+  {
+    register_number: 1813019,
+    course: "EEE",
+    stream: "B.E",
+    college: "KSRCE",
+    batch: "2018-2012",
+  },
+  {
+    register_number: 1813016,
+    course: "IT",
+    stream: "B.E",
+    college: "KSRIET",
+    batch: "2018-2012",
+  },
+  {
+    register_number: 1813016,
+    course: "IT",
+    stream: "B.E",
+    college: "KSRIET",
+    batch: "2018-2012",
+  },
 ];
 const ListUser = (props) => {
   //   const [posts, setPosts] = useState([]);
@@ -103,78 +131,72 @@ const ListUser = (props) => {
   };
   return (
     <>
-      {tableData.length > 0 && (
-        <table className="table-responsive table">
-          <thead>
-            <tr>
-              <th>
+      <div className="container-fluid mt-5">
+        <div
+          className="d-flex flex-column "
+          id="style-default"
+          style={{ width: "60vw", overflowX: "scroll" }}
+        >
+          <div className="force-overflow">
+            <div className="d-flex">
+              <div className="col-3 list-table-header">
                 Register number
-                <button onClick={onSortChange}>
+                <button onClick={onSortChange} className="sort-btn pl-3">
                   <i className={`fas fa-${sortTypes[currentSort].class}`} />
                 </button>
-              </th>
-              <th>Stream</th>
-              <th>Course</th>
-              <th>College</th>
-              <th>Batch</th>
-              {/* <th>
-                Net Worth
-                <button onClick={onSortChange}>
-                  <i className={`fas fa-${sortTypes[currentSort].class}`} />
-                </button>
-              </th> */}
-            </tr>
-          </thead>
-          <tbody>
-            {[...tableData].sort(sortTypes[currentSort].fn).map((p) => (
-              <tr>
-                <td>{p.register_number}</td>
-                <td>{p.course}</td>
-                <td>{p.college}</td>
-                <td>{p.stream}</td>
-                <td>{p.batch}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+              </div>
+              <div className="col-3 list-table-header">Stream</div>
+              <div className="col-3 list-table-header">Course</div>
+              <div className="col-3 list-table-header">College</div>
+              <div className="col-3 list-table-header">Phone Number</div>
+              <div className="col-3 list-table-header">Name</div>
+            </div>
+            {[...tableData].sort(sortTypes[currentSort].fn).map((p) => {
+              return (
+                <>
+                  <div className="position-relative">
+                    <div className="d-flex">
+                      <div className="col-3 list-table-data p-2">
+                        {p.register_number}
+                      </div>
+                      <div className="col-3 list-table-data p-2">
+                        {p.stream}
+                      </div>
+                      <div className="col-3 list-table-data p-2">
+                        {p.course}
+                      </div>
+                      <div className="col-3 list-table-data p-2">
+                        {p.college}
+                      </div>
+                      <div className="col-3 list-table-data p-2">{p.batch}</div>
+                      <div className="col-3 list-table-data p-2">{p.batch}</div>
+                    </div>
+                  </div>
+                  <div
+                    className="d-flex position-absolute pr-3"
+                    style={{ right: "0px", marginTop: "-35px" }}
+                  >
+                    <button className="pr-4 pl-4 mr-2 edit-btn">Edit</button>
+                    <button className="pr-4 pl-4 delete-btn" disabled>
+                      Delete
+                    </button>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mt-3 mb-5">
+          <Pagination
+            className="float-right"
+            count={13}
+            variant="text"
+            color="primary"
+            //   onChange={(e, value) => setPage(value)}
+          />
+        </div>
+      </div>
     </>
-    // <div className="container-fluid list-user-scroll">
-    //   <TableContainer component={Paper}>
-    //     <Table className={classes.table} aria-label="simple table">
-    //       <TableHead>
-    //         <TableRow>
-    //           <TableCell>Register number</TableCell>
-    //           <TableCell align="center">Stream</TableCell>
-    //           <TableCell align="center">Course name</TableCell>
-    //           <TableCell align="center">College name</TableCell>
-    //           <TableCell align="center">Batch</TableCell>
-    //         </TableRow>
-    //       </TableHead>
-    //       <TableBody>
-    //         {posts.map((post) => (
-    //           <TableRow key={post.name}>
-    //             <TableCell component="th" scope="row">
-    //               {post.id}
-    //             </TableCell>
-    //             <TableCell align="center">{post.userId}</TableCell>
-    //             <TableCell align="center">{post.title}</TableCell>
-    //             <TableCell align="center">{post.completed}</TableCell>
-    //             <TableCell align="center">{post.title}</TableCell>
-    //           </TableRow>
-    //         ))}
-    //       </TableBody>
-    //     </Table>
-    //   </TableContainer>
-    //   <div className="mt-3 mb-5">
-    //     <Pagination
-    //       className="float-right"
-    //       count={13}
-    //       variant="text"
-    //       onChange={(e, value) => setPage(value)}
-    //     />
-    //   </div>
-    // </div>
   );
 };
 
