@@ -1,0 +1,13 @@
+.btn-sucess{
+    background-color:#469667 !important;
+}
+
+.btn-sucess:focus{
+    border: none;
+    outline: none;
+}
+
+.input-click:focus{
+    outline: none;
+  outline-color: green !important;
+}

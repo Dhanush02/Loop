@@ -98,10 +98,9 @@ const Login = (props) => {
         <div className="panels-cont">
           <div className="panel left-panel">
             <div className="content">
-              <h3>New here ?</h3>
+              <h3>Are you Admin ?</h3>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Debitis, ex ratione. Aliquid!
+                By clicking the button you can move on to the admin page.And then you can add the task and maintain data's.
               </p>
               <button
                 className="btn transparent"

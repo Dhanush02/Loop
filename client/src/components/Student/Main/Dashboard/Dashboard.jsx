@@ -36,7 +36,7 @@ const Dashboard = (props) => {
         <div className="d-flex">
           <div className="col-md-7">
             <p className="header-title mt-1">
-              <span className="dash-greet">Welcome</span> DHANUSH KARTHICK S ..!
+              <span className="dash-greet">Welcome</span> DHANUSH KARTHICK S ..!!
             </p>
             <div className="d-flex border-header mt-3 align-items-center justify-">
               <div className="col-md-7 d-flex flex-column pl-4">
@@ -59,24 +59,24 @@ const Dashboard = (props) => {
             </div>
           </div>
           <div
-            className="col-md-4 p-3 d-flex border-header-1"
+            className="col-md-4 p-3 mt-5 d-flex border-header-1"
             style={{
               backgroundImage: `url(${ProblemKit})`,
-              height: "280px",
+              height: "310px",
               backgroundSize: "50% 100%",
               backgroundRepeat: "no-repeat",
-              backgroundColor: "rgb(57, 185, 143)",
+              backgroundColor: "#B0D7C0",
               backgroundPosition: "78% 15%",
             }}
           >
             <div className="problem-solve-header d-flex flex-column align-items-center mt-5">
               <div className="d-flex flex-column align-self-start">
-                <span className="problem-article">Problem </span>
-                <span className="problem-article">Solving </span>
-                <span className="problem-span mb-2">For students</span>
+                <span className="problem-article ml-4">Problem </span>
+                <span className="problem-article ml-4">Solving </span>
+                <span className="problem-span mb-2 ml-4">For students</span>
                 <NavLink to="/codekata">
-                  <span className="arrow-span">
-                    <i className="fas fa-arrow-circle-right"></i> Learn more..
+                  <span className="arrow-span ml-3 text-dark">
+                    <i className="fas fa-arrow-circle-right mt-5 ml-2"></i> Learn more..
                   </span>
                 </NavLink>
               </div>
@@ -85,17 +85,17 @@ const Dashboard = (props) => {
         </div>
       </div>
       <div className="dashboard-code mt-5">
-        <p className="text-center dash-title-category">WHY LOOP ?</p>
+        <p className="text-center dash-title-category mt-3">WHY LOOP ?</p>
         <div className="d-flex align-items-center justify-content-center">
           <div className="col-md-6 d-flex flex-column align-items-center">
             <div className="d-flex flex-column mt-3">
-              <span className="dash-title">Learn, Practice</span>
-              <span className="dash-title">Get Hired</span>
+              <span className="dash-title ml-4">Learn, Practice ,Hired</span>
+             
             </div>
             <div className="d-flex flex-column mt-3">
-              <span>Loop providing you a better platform to learn, </span>
-              <span>practice and preparing for getting </span>
-              <span>offers in the top MNC's</span>
+              <span className="sub-text">Loop providing you a better platform to learn, </span>
+              <span className="sub-text">practice and preparing for getting </span>
+              <span className="sub-text">offers in the top MNC's</span>
             </div>
           </div>
           <div className="col-md-6">
@@ -110,14 +110,14 @@ const Dashboard = (props) => {
             <img src={Img1} alt="" />
           </div>
 
-          <div className="col-md-6 d-flex flex-column align-items-center">
+          <div className="col-md-6 d-flex flex-column ">
             <div className="d-flex flex-column mt-3">
-              <span className="dash-title">Getting too</span>
-              <span className="dash-title">Bored ?</span>
+              <span className="dash-title">Write code Repeat !!</span>
+            
             </div>
             <div className="d-flex flex-column mt-3">
-              <span>Get some knowledge by reading the </span>
-              <span>articles whe you get bored </span>
+              <span  className="sub-text">Once the challenge is posted by a faculty  </span>
+              <span  className="sub-text">complete within the certain period of time </span>
             </div>
           </div>
         </div>
@@ -127,13 +127,12 @@ const Dashboard = (props) => {
         <div className="d-flex align-items-center justify-content-center">
           <div className="col-md-6 d-flex flex-column align-items-center">
             <div className="d-flex flex-column mt-3">
-              <span className="dash-title">Learn, Practice</span>
-              <span className="dash-title">Get Hired</span>
+              <span className="dash-title ml-5">Compile , Practice Code</span>
             </div>
             <div className="d-flex flex-column mt-3">
-              <span>Loop providing you a better platform to learn, </span>
-              <span>practice and preparing for getting </span>
-              <span>offers in the top MNC's</span>
+              <span className="sub-text">Loop providing you a better platform to learn, </span>
+              <span className="sub-text">practice and preparing for getting </span>
+              <span className="sub-text">offers in the top MNC's</span>
             </div>
           </div>
           <div className="col-md-6">
@@ -150,12 +149,12 @@ const Dashboard = (props) => {
 
           <div className="col-md-6 d-flex flex-column align-items-center">
             <div className="d-flex flex-column mt-3">
-              <span className="dash-title">Getting too</span>
-              <span className="dash-title">Bored ?</span>
+              <span className="dash-title">Getting too Bored ?</span>
+              
             </div>
             <div className="d-flex flex-column mt-3">
-              <span>Get some knowledge by reading the </span>
-              <span>articles whe you get bored </span>
+              <span className="sub-text">Get some knowledge by reading the </span>
+              <span className="sub-text">articles whe you get bored </span>
             </div>
           </div>
         </div>
