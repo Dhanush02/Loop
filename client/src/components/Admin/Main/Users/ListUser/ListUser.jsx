@@ -174,7 +174,7 @@ const ListUser = (props) => {
                   </div>
                   <div
                     className="d-flex position-absolute pr-3"
-                    style={{ right: "0px", marginTop: "-35px" }}
+                    style={{ left: "85%", marginTop: "-35px" }}
                   >
                     <button className="pr-4 pl-4 mr-2 edit-btn">Edit</button>
                     <button className="pr-4 pl-4 delete-btn" disabled>
