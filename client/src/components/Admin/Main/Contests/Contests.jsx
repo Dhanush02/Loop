@@ -1,5 +1,6 @@
 import React from "react";
 import "./Contests.css";
+import { Link } from "react-router-dom";
 const Contests = () => {
   const eventArr = [
     { name: "November challenge 2021" },
@@ -16,9 +17,11 @@ const Contests = () => {
           <p className="text-left dash-title-category pb-2">Contests</p>
         </div>
         <div className="create-con">
-          <button className="p-2">
-            <i className="fas fa-plus pr-2 pl-2"></i>CREATE CONTEST
-          </button>
+          <Link to="/contests/create-contest">
+            <button className="p-2">
+              <i className="fas fa-plus pr-2 pl-2"></i>CREATE CONTEST
+            </button>
+          </Link>
         </div>
       </div>
       <div className="mt-3 mb-3">

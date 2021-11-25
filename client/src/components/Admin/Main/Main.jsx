@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import LoopLogo from "../../Images/Loop1.jpg";
 import { NavLink, Route, Redirect, Switch } from "react-router-dom";
 import "../../Student/Main/Main.css";
@@ -7,6 +7,7 @@ import AdminDashboard from "./AdminDashboard/AdminDashboard";
 import Contests from "./Contests/Contests";
 import Users from "./Users/Users";
 import Leaderboard from "./Leaderboard/Leaderboard";
+import CreateContest from "./Contests/CreateContest/CreateContest";
 const Main = (props) => {
   const [sideToggle, setSideToggle] = useState(false);
   return (
@@ -108,11 +109,19 @@ const Main = (props) => {
               <Users />
             </Route>
             <Route path="/contests">
-              <Contests />
+              <Route path="/contests/create-contest" exact>
+                <CreateContest />
+              </Route>
+              <Route path="/contests" exact>
+                <Contests />
+              </Route>
             </Route>
             <Route path="/leaderboard">
               <Leaderboard />
             </Route>
+            {/* <Route path="/create-contest" exact>
+              <createContext />
+            </Route> */}
             <Route
               exact
               path="/"

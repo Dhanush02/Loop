@@ -99,3 +99,15 @@
 .log-file {
   cursor: pointer;
 }
+.model-correct{
+  color: #21a366;
+ 
+}
+.model-wrong{
+  color: red;
+  
+}
+.model-correct,.model-wrong{
+  font-size: 18px;
+  font-weight: 500;
+}
