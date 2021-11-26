@@ -15,6 +15,7 @@ const CreateContest = () => {
           get started by providing the initail details of the contest{" "}
         </span>
       </div>
+      
       <div className="d-flex flex-column mt-4">
         <div className="d-flex mt-1 mb-3">
           <span className="contest-line-height mr-2">
@@ -55,16 +56,16 @@ const CreateContest = () => {
           </span>
           <div className="col-md-4">
             <InputReducer
-              placeholder="Create Contest"
-              name="Create Contest"
+              placeholder="Ends at"
+              name="Ends at"
               type="text"
             />
           </div>
           <span className="contest-line-height mr-2">at</span>
           <div className="col-md-4">
             <InputReducer
-              placeholder="Create Contest"
-              name="Create Contest"
+              placeholder="Ends at"
+              name="Ends at"
               type="text"
             />
           </div>
