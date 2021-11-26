@@ -46,7 +46,9 @@ const Contests = () => {
               <div className="d-flex mt-2 mb-2">
                 <div className="col-md-3 d-flex justify-content-between text-center upcoming-task">
                   <i class="fas fa-link text-left mt-2"></i>
-                  <span>{event.name}</span>
+                  <Link to="/contests/details">
+                    <span>{event.name}</span>
+                  </Link>
                 </div>
                 <div className="col-md-3 text-center">30/11/2021 9.00pm</div>
                 <div className="col-md-3 text-center">30/11/2021 9.00pm</div>

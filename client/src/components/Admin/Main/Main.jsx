@@ -8,6 +8,7 @@ import Contests from "./Contests/Contests";
 import Users from "./Users/Users";
 import Leaderboard from "./Leaderboard/Leaderboard";
 import CreateContest from "./Contests/CreateContest/CreateContest";
+import ContestDetails from "./Contests/ContestDetails/ContestDetails";
 const Main = (props) => {
   const [sideToggle, setSideToggle] = useState(false);
   return (
@@ -112,16 +113,16 @@ const Main = (props) => {
               <Route path="/contests/create-contest" exact>
                 <CreateContest />
               </Route>
-              <Route path="/contests" exact>
+              <Route path="/contests/details">
+                <ContestDetails />
+              </Route>
+              <Route path="/contests">
                 <Contests />
               </Route>
             </Route>
             <Route path="/leaderboard">
               <Leaderboard />
             </Route>
-            {/* <Route path="/create-contest" exact>
-              <createContext />
-            </Route> */}
             <Route
               exact
               path="/"
