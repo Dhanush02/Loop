@@ -8,7 +8,7 @@ const ContestQuizzes = () => {
         { name: "Python challenge 2021" },
     ];
     return (
-        <>
+        <div className="container">
             <div className="d-flex flex-column" style={{ marginTop: '40px' }}>
                 <p className="text-left dash-title-category pb-2">Quiz Challenges</p>
                 <span className="create-con-text mt-1">
@@ -45,7 +45,7 @@ const ContestQuizzes = () => {
 
 
             </div>
-        </>
+        </div>
     )
 }
 

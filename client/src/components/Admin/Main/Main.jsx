@@ -9,6 +9,9 @@ import Users from "./Users/Users";
 import Leaderboard from "./Leaderboard/Leaderboard";
 import CreateContest from "./Contests/CreateContest/CreateContest";
 import ContestDetails from "./Contests/ContestDetails/ContestDetails";
+import Quizzes from "./Quizzes/Quizzes";
+import Challenges from "./Challenges/Challenges";
+import CreateQuiz from "./Quizzes/CreateQuiz/CreateQuiz";
 const Main = (props) => {
   const [sideToggle, setSideToggle] = useState(false);
   return (
@@ -68,12 +71,23 @@ const Main = (props) => {
             <li className="nav-item dash-item mb-2 color-11">
               <NavLink
                 activeClassName="active-class color-11"
-                to="/leaderboard"
+                to="/quizzes"
                 className="nav-link dash-li"
               >
                 <i className="fas fa-road pr-4 pl-4 dash-icon shake"></i>
-                <span className="hide-span">Leaderboard</span>
-                <span className="tooltip">Leaderboard</span>
+                <span className="hide-span">Quizzes</span>
+                <span className="tooltip">Quizzes</span>
+              </NavLink>
+            </li>
+            <li className="nav-item dash-item mb-2 color-11">
+              <NavLink
+                activeClassName="active-class color-11"
+                to="/challenges"
+                className="nav-link dash-li"
+              >
+                <i className="fas fa-road pr-4 pl-4 dash-icon shake"></i>
+                <span className="hide-span">Challenges</span>
+                <span className="tooltip">Challenges</span>
               </NavLink>
             </li>
           </ul>
@@ -116,12 +130,20 @@ const Main = (props) => {
               <Route path="/contests/details">
                 <ContestDetails />
               </Route>
-              <Route path="/contests">
+              <Route path="/contests" exact>
                 <Contests />
               </Route>
             </Route>
-            <Route path="/leaderboard">
-              <Leaderboard />
+            <Route path="/quizzes">
+              <Route path="/quizzes/create-quiz">
+                <CreateQuiz />
+              </Route>
+              <Route path="/quizzes" exact>
+                <Quizzes />
+              </Route>
+            </Route>
+            <Route path="/challenges">
+              <Challenges />
             </Route>
             <Route
               exact

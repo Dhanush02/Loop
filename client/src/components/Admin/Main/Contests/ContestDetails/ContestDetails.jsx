@@ -7,8 +7,8 @@ import ContestStatictics from "./ContestStatictics/ContestStatictics";
 import CreateContest from "../CreateContest/CreateContest";
 const ContestDetails = () => {
   return (
-    <div className="container add-user-container" style={{marginTop:'40px'}}>
-      <ul class="list-group d-flex align-items-center justify-content-center flex-row p-2 mt-3 mb-3 border">
+    <div style={{ marginTop: '40px' }}>
+      <ul class="container list-group d-flex align-items-center justify-content-center flex-row p-2 mt-3 mb-3 border">
         <li class="list-group-item user-group-pill">
           <NavLink
             exact
@@ -50,7 +50,7 @@ const ContestDetails = () => {
           </NavLink>
         </li>
       </ul>
-      <div className="container">
+      <div>
         <Switch>
           <Route path="/contests/details/edit" exact>
             <CreateContest />
