@@ -1,6 +1,7 @@
 import React from "react";
 import InputReducer from "../../../../Reducer/InputReducer";
 import LoopHeader from "../../../../Images/Loop start.svg";
+import { Link } from "react-router-dom";
 const CreateQuiz = () => {
   return (
     <div>
@@ -22,11 +23,13 @@ const CreateQuiz = () => {
                   type="text"
                 />
               </div>
-              <div className="create-con mt-2 clearfix">
-                <button className="p-2 float-right">
-                  NEXT<i class="fas fa-arrow-right pr-2 pl-3"></i>
-                </button>
-              </div>
+              <Link to="/quizzes/add-quiz">
+                <div className="create-con mt-2 clearfix">
+                  <button className="p-2 float-right">
+                    NEXT<i class="fas fa-arrow-right pr-2 pl-3"></i>
+                  </button>
+                </div>
+              </Link>
             </div>
           </div>
           <div className="col-md-6 d-flex">

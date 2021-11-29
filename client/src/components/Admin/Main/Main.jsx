@@ -12,6 +12,7 @@ import ContestDetails from "./Contests/ContestDetails/ContestDetails";
 import Quizzes from "./Quizzes/Quizzes";
 import Challenges from "./Challenges/Challenges";
 import CreateQuiz from "./Quizzes/CreateQuiz/CreateQuiz";
+import AddQuiz from "./Quizzes/CreateQuiz/AddQuiz/AddQuiz";
 const Main = (props) => {
   const [sideToggle, setSideToggle] = useState(false);
   return (
@@ -137,6 +138,9 @@ const Main = (props) => {
             <Route path="/quizzes">
               <Route path="/quizzes/create-quiz">
                 <CreateQuiz />
+              </Route>
+              <Route path="/quizzes/add-quiz">
+                <AddQuiz />
               </Route>
               <Route path="/quizzes" exact>
                 <Quizzes />
